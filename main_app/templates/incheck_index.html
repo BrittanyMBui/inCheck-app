@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome, {{ request.user.username }}</h1>
+
+{% for todo in todos %}
+
+    <p>Date Created: {{ todo.date_created }}</p>
+    <h4>{{ todo.name }}</h4>
+    <p>Category: {{ todo.get_title_display }}</p>
+    <p>Completed: {{ todo.completed }}</p>
+    <p>Description: {{ todo.body }}</p>
+    <p>Due: {{ todo.due_date }}</p>
+
+{% endfor %}
+
+{% endblock %}

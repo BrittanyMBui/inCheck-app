@@ -13,6 +13,7 @@ TITLES = (
     ('M', 'Misc')
 )
 class ToDo(models.Model):
+    name = models.CharField(max_length=100)
     title = models.CharField(
         max_length=1,
         choices=TITLES,
@@ -21,6 +22,7 @@ class ToDo(models.Model):
     date_created = models.DateField()
     due_date = models.DateField()
     body = models.CharField(max_length=250)
+    completed = models.BooleanField(default = False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
