@@ -6,11 +6,8 @@
 {% for todo in todos %}
 
     <p>Date Created: {{ todo.date_created }}</p>
-    <h4>{{ todo.name }}</h4>
-    <p>Category: {{ todo.get_title_display }}</p>
+    <a href="{% url 'view_todo' todo.id %}"><h4>{{ todo.name }}</h4></a>
     <p>Completed: {{ todo.completed }}</p>
-    <p>Description: {{ todo.body }}</p>
-    <p>Due: {{ todo.due_date }}</p>
 
 {% endfor %}
 

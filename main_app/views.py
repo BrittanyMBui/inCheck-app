@@ -26,3 +26,10 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+def view_todo(request, todo_id):
+    todo = ToDo.objects.get(id=todo_id)
+    context = {
+        'todo': todo,
+    }
+
+    return render(request, 'todos/view_todo.html', context)
