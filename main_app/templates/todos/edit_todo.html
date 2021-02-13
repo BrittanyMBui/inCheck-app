@@ -3,4 +3,15 @@
 
 <h1>Edit ToDo</h1>
 
+<form method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn">Save Changes</button>
+
+</form>
+
+<a href="{% url 'incheck_index' %}"><button>Back</button></a>
+
 {% endblock %}

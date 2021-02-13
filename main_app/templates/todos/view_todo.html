@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ todo.name }}</h1>
-<p>Date Created: {{ todo.date_created }}</p>
-<p>Category: {{ todo.get_title_display }}</p>
-<p>Completed: {{ todo.completed }}</p>
-<p>Description: {{ todo.body }}</p>
-<p>Due: {{ todo.due_date }}</p>
+<!-- TODO DISPLAY -->
+<div>
+    <h1>{{ todo.name }}</h1>
+    <p>Date Created: {{ todo.date_created }}</p>
+    <p>Category: {{ todo.get_title_display }}</p>
+    <p>Completed: {{ todo.completed }}</p>
+    <p>Description: {{ todo.body }}</p>
+    <p>Due: {{ todo.due_date }}</p>
+</div>
+
+<a href="{% url 'edit_todo' todo.id %}"><button>Edit ToDo</button></a>
+<form action="{% url 'delete_todo' todo.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Delete ToDo</button>
+</form>
+<a href="/incheck/"><button>Back</button></a>
+
+
 
 {% endblock %}
