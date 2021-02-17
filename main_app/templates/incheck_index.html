@@ -8,7 +8,6 @@
     <a href="{% url 'view_todo' todo.id %}">
         <h4>{{ todo.name }}</h4>
     </a>
-    <p>Completed: {{ todo.completed }}</p>
 {% endfor %}
 
 <a href="{% url 'create_todo' %}"><button>Add New ToDo</button></a>
