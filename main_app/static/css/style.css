@@ -1,3 +1,9 @@
 body {
-    background-color:whitesmoke;
+    height: 100vh;
+    background-image: url('/static/images/incheckbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    text-shadow: 1px 1px rebeccapurple;
 }
+
