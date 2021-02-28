@@ -8,4 +8,14 @@
     <input type="submit" class="btn" value="Add ToDo">
 </form>
 
+<script>
+    const dateEl = document.getElementById('id_due_date');
+    M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
+
 {% endblock %}

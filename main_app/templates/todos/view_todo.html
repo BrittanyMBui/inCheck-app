@@ -6,6 +6,7 @@
     <h1>{{ todo.name }}</h1>
     <p>Date Created: {{ todo.date_created }}</p>
     <p>Category: {{ todo.get_title_display }}</p>
+    <p>Level of Importance: {{ todo.get_importance_display }}</p>
     <p>Description: {{ todo.body }}</p>
     <p>Due: {{ todo.due_date }}</p>
 </div>
